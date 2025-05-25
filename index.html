@@ -12,27 +12,52 @@
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
       font-family: 'Hind', sans-serif;
       background: radial-gradient(ellipse at center, #2B0A05 0%, #1a0502 100%);
       color: #FFD700;
       min-height: 100vh;
       display: flex;
-      justify-content: center;
-      align-items: start;
-      padding: 30px 20px 160px;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 80px;
+      padding-bottom: 80px;
     }
+
+    .ad-banner {
+      width: 100%;
+      max-width: 480px;
+      text-align: center;
+      z-index: 999;
+    }
+
+    #topAd {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    #bottomAd {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
     .container {
       background-color: rgba(43,10,5,0.85);
       border: 3px solid #FFD700;
       border-radius: 20px;
-      padding: 25px 18px;
+      padding: 20px 16px;
       width: 100%;
       max-width: 440px;
       text-align: center;
       box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
       animation: fadeInUp 1s ease;
     }
+
     h1 {
       font-family: 'Yatra One', cursive;
       font-size: 1.8rem;
@@ -40,16 +65,16 @@
       margin-bottom: 18px;
       animation: fadeInDown 1s ease;
     }
+
     #selectedImage {
       width: 100%;
-      max-height: 320px;
+      height: auto;
       border-radius: 12px;
       border: 3px solid #FFD700;
       margin-bottom: 14px;
-      object-fit: cover;
-      object-position: center top;
-      animation: fadeIn 1.5s ease;
+      object-fit: contain;
     }
+
     #senderMessage {
       font-size: 1.1rem;
       font-weight: bold;
@@ -57,6 +82,7 @@
       margin-bottom: 18px;
       animation: fadeIn 1.6s ease;
     }
+
     input[type="text"] {
       width: 100%;
       padding: 10px;
@@ -68,11 +94,13 @@
       color: #000;
       animation: fadeIn 2s ease;
     }
+
     #previewBlock {
       margin-bottom: 12px;
       font-weight: bold;
       color: #FFD700;
     }
+
     .social-buttons {
       display: flex;
       justify-content: space-between;
@@ -81,6 +109,7 @@
       flex-wrap: wrap;
       animation: fadeIn 2.2s ease;
     }
+
     .mini-btn {
       flex: 1;
       display: flex;
@@ -96,29 +125,36 @@
       font-family: 'Hind', sans-serif;
       transition: 0.3s;
     }
+
     .mini-btn img {
       width: 18px;
       height: 18px;
     }
+
     .mini-btn:nth-child(1) {
       background-color: #075E54;
       color: #ffffff;
     }
+
     .mini-btn:nth-child(2) {
       background-color: #002B5B;
       color: #ffffff;
     }
+
     .mini-btn:nth-child(3) {
       background-color: #000000;
       color: #FFD700;
     }
+
     .mini-btn:hover {
       opacity: 0.9;
     }
+
     #generatedLinkBlock {
       margin-top: 10px;
       display: none;
     }
+
     #generatedLink {
       width: 100%;
       padding: 9px;
@@ -127,42 +163,38 @@
       border: none;
     }
 
-    .diya-gif {
-      position: fixed;
-      width: 90px;
-      height: auto;
-      z-index: 1000;
-      pointer-events: none;
-      animation: glow 2s ease-in-out infinite alternate;
-    }
-    .bottom-left {
-      bottom: 10px;
-      left: 10px;
-    }
-    .bottom-right {
-      bottom: 10px;
-      right: 10px;
-    }
-
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-30px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
-    @keyframes glow {
-      from { opacity: 0.6; transform: scale(1); }
-      to { opacity: 1; transform: scale(1.1); }
-    }
   </style>
 </head>
 <body>
+
+  <!-- 🔝 Top Ad (Fixed) -->
+  <div id="topAd" class="ad-banner">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '9781f3b69cb95a8bdf4d843cd39ce190',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/9781f3b69cb95a8bdf4d843cd39ce190/invoke.js"></script>
+  </div>
+
   <div class="container">
     <h1>🌟 अखंड सौभाग्य का प्रतीक 🌟</h1>
 
@@ -190,6 +222,19 @@
     </div>
   </div>
 
+  <!-- 🔻 Bottom Ad (Fixed) -->
+  <div id="bottomAd" class="ad-banner">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '9781f3b69cb95a8bdf4d843cd39ce190',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/9781f3b69cb95a8bdf4d843cd39ce190/invoke.js"></script>
+  </div>
 
   <script>
     function generateLink() {
@@ -251,20 +296,10 @@
       const img = params.get('img');
       if (sender && img) {
         document.getElementById('senderMessage').textContent =
-          `🎉 ${decodeURIComponent(sender)} की ओर से वट सावित्री पूजा  की आप सभी माताओ एवं बहनों को हार्दिक शुभकामनाएं 🎉`;
+          `🎉 ${decodeURIComponent(sender)} की ओर से वट सावित्री पूजा की आप सभी माताओ एवं बहनों को हार्दिक शुभकामनाएं 🎉`;
         document.getElementById('selectedImage').src = img;
       }
     }
   </script>
 </body>
 </html>
-<script type="text/javascript">
-	atOptions = {
-		'key' : '9781f3b69cb95a8bdf4d843cd39ce190',
-		'format' : 'iframe',
-		'height' : 60,
-		'width' : 468,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/9781f3b69cb95a8bdf4d843cd39ce190/invoke.js"></script>
