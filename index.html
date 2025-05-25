@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>शुभ दीपावली</title>
+  <title>वट सावित्री पूजा शुभकामनाएं</title>
   <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;600&family=Yatra+One&display=swap" rel="stylesheet"/>
-
   <style>
     * {
       margin: 0;
@@ -13,16 +12,22 @@
       box-sizing: border-box;
     }
 
+    html, body {
+      height: 100%;
+    }
+
     body {
       font-family: 'Hind', sans-serif;
       background: radial-gradient(ellipse at center, #2B0A05 0%, #1a0502 100%);
       color: #FFD700;
-      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-top: 80px;
-      padding-bottom: 80px;
+      justify-content: flex-start;
+      overflow-y: auto;
+      padding-top: 85px;
+      padding-bottom: 85px;
+      text-align: center;
     }
 
     .ad-banner {
@@ -32,55 +37,54 @@
       z-index: 999;
     }
 
-    #topAd {
+    #topAd, #bottomAd {
       position: fixed;
-      top: 0;
       left: 0;
-      background-color: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    #topAd {
+      top: 0;
     }
 
     #bottomAd {
-      position: fixed;
       bottom: 0;
-      left: 0;
-      background-color: rgba(0, 0, 0, 0.5);
     }
 
     .container {
       background-color: rgba(43,10,5,0.85);
-      border: 3px solid #FFD700;
-      border-radius: 20px;
-      padding: 20px 16px;
-      width: 100%;
-      max-width: 440px;
-      text-align: center;
-      box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
-      animation: fadeInUp 1s ease;
+      border: 2px solid #FFD700;
+      border-radius: 18px;
+      padding: 20px 14px;
+      width: 95%;
+      max-width: 460px;
+      box-shadow: 0 0 18px rgba(255, 215, 0, 0.4);
     }
 
     h1 {
       font-family: 'Yatra One', cursive;
       font-size: 1.8rem;
       color: #00FFFF;
-      margin-bottom: 18px;
-      animation: fadeInDown 1s ease;
+      margin-bottom: 16px;
     }
 
     #selectedImage {
       width: 100%;
       height: auto;
+      max-height: 280px;
       border-radius: 12px;
-      border: 3px solid #FFD700;
-      margin-bottom: 14px;
+      border: 2px solid #FFD700;
+      margin-bottom: 12px;
       object-fit: contain;
     }
 
     #senderMessage {
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       font-weight: bold;
-      color: #FFD700;
-      margin-bottom: 18px;
-      animation: fadeIn 1.6s ease;
+      margin: 16px 0 10px;
+      color: #fffacd;
+      line-height: 1.4;
     }
 
     input[type="text"] {
@@ -90,24 +94,22 @@
       border: 2px solid #FFD700;
       font-size: 1rem;
       margin-bottom: 10px;
-      background-color: #FDF1C7;
+      background-color: #fff8dc;
       color: #000;
-      animation: fadeIn 2s ease;
     }
 
     #previewBlock {
-      margin-bottom: 12px;
+      font-size: 0.95rem;
+      margin-bottom: 10px;
       font-weight: bold;
-      color: #FFD700;
     }
 
     .social-buttons {
       display: flex;
       justify-content: space-between;
       gap: 6px;
-      margin-top: 10px;
+      margin-top: 8px;
       flex-wrap: wrap;
-      animation: fadeIn 2.2s ease;
     }
 
     .mini-btn {
@@ -116,7 +118,7 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
-      padding: 8px 10px;
+      padding: 8px;
       font-size: 0.9rem;
       border: none;
       border-radius: 8px;
@@ -157,25 +159,10 @@
 
     #generatedLink {
       width: 100%;
-      padding: 9px;
+      padding: 8px;
       font-size: 0.9rem;
       border-radius: 8px;
       border: none;
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
     }
   </style>
 </head>
@@ -196,13 +183,14 @@
   </div>
 
   <div class="container">
-    <h1>🌟 अखंड सौभाग्य का प्रतीक 🌟</h1>
+    <h1>🌸 वट सावित्री पूजा 2025 🌸</h1>
 
     <img id="selectedImage" src="https://raw.githubusercontent.com/saurani/Vat-savitripuja1/main/ChatGPT%20Image%20May%2025%2C%202025%2C%2006_43_05%20AM.png" alt="लक्ष्मी माता" />
 
+    <!-- यह नाम से बना हुआ संदेश फोटो के नीचे आएगा -->
     <div id="senderMessage"></div>
 
-    <input type="text" id="senderName" placeholder="यहाँ अपना नाम लिखें" oninput="updatePreview()" />
+    <input type="text" id="senderName" placeholder="अपना नाम लिखें" oninput="updatePreview()" />
     <div id="previewBlock"></div>
 
     <div class="social-buttons">
@@ -244,7 +232,8 @@
         alert('कृपया अपना नाम डालें');
         return null;
       }
-      return `${window.location.href.split('?')[0]}?sender=${encodeURIComponent(name)}&img=${encodeURIComponent(img)}`;
+      const base = window.location.href.split('?')[0];
+      return `${base}?sender=${encodeURIComponent(name)}&img=${encodeURIComponent(img)}`;
     }
 
     function copyGeneratedLinkDirect() {
@@ -261,23 +250,17 @@
     }
 
     function shareLink(platform) {
+      const name = document.getElementById('senderName').value.trim();
       const link = generateLink();
-      if (!link) return;
-      const message = encodeURIComponent(link);
-      const isMobile = /iPhone|Android/i.test(navigator.userAgent);
+      if (!link || !name) return;
+
+      const messageText = `${name} की ओर से वट सावित्री पूजा का एक खास संदेश 👉 ${link}`;
+      const encoded = encodeURIComponent(messageText);
 
       if (platform === 'whatsapp') {
-        if (isMobile) {
-          window.location.href = `intent://send?text=${message}#Intent;package=com.whatsapp;scheme=whatsapp;end`;
-        } else {
-          window.open(`https://web.whatsapp.com/send?text=${message}`, '_blank');
-        }
+        window.open(`https://wa.me/?text=${encoded}`, '_blank');
       } else if (platform === 'facebook') {
-        if (isMobile) {
-          window.location.href = `intent://share?text=${message}#Intent;package=com.facebook.katana;scheme=facebook;end`;
-        } else {
-          window.open(`https://www.facebook.com/sharer/sharer.php?u=${message}`, '_blank');
-        }
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}`, '_blank');
       }
     }
 
@@ -296,7 +279,7 @@
       const img = params.get('img');
       if (sender && img) {
         document.getElementById('senderMessage').textContent =
-          `🎉 ${decodeURIComponent(sender)} की ओर से वट सावित्री पूजा की आप सभी माताओ एवं बहनों को हार्दिक शुभकामनाएं 🎉`;
+          `🎉 ${decodeURIComponent(sender)} की ओर से वट सावित्री पूजा की आप सभी माताओं एवं बहनों को हार्दिक शुभकामनाएं 🎉`;
         document.getElementById('selectedImage').src = img;
       }
     }
