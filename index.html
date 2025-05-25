@@ -6,28 +6,24 @@
   <title>वट सावित्री पूजा शुभकामनाएं</title>
   <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;600&family=Yatra+One&display=swap" rel="stylesheet"/>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     html, body {
       height: 100%;
-    }
-
-    body {
       font-family: 'Hind', sans-serif;
       background: radial-gradient(ellipse at center, #2B0A05 0%, #1a0502 100%);
       color: #FFD700;
+      overflow-y: auto;
+      text-align: center;
+    }
+
+    body {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      overflow-y: auto;
       padding-top: 85px;
       padding-bottom: 85px;
-      text-align: center;
     }
 
     .ad-banner {
@@ -44,13 +40,8 @@
       background-color: rgba(0, 0, 0, 0.4);
     }
 
-    #topAd {
-      top: 0;
-    }
-
-    #bottomAd {
-      bottom: 0;
-    }
+    #topAd { top: 0; }
+    #bottomAd { bottom: 0; }
 
     .container {
       background-color: rgba(43,10,5,0.85);
@@ -133,24 +124,11 @@
       height: 18px;
     }
 
-    .mini-btn:nth-child(1) {
-      background-color: #075E54;
-      color: #ffffff;
-    }
+    .mini-btn:nth-child(1) { background-color: #075E54; color: #ffffff; }
+    .mini-btn:nth-child(2) { background-color: #002B5B; color: #ffffff; }
+    .mini-btn:nth-child(3) { background-color: #000000; color: #FFD700; }
 
-    .mini-btn:nth-child(2) {
-      background-color: #002B5B;
-      color: #ffffff;
-    }
-
-    .mini-btn:nth-child(3) {
-      background-color: #000000;
-      color: #FFD700;
-    }
-
-    .mini-btn:hover {
-      opacity: 0.9;
-    }
+    .mini-btn:hover { opacity: 0.9; }
 
     #generatedLinkBlock {
       margin-top: 10px;
@@ -168,7 +146,7 @@
 </head>
 <body>
 
-  <!-- 🔝 Top Ad (Fixed) -->
+  <!-- 🔝 Top Ad -->
   <div id="topAd" class="ad-banner">
     <script type="text/javascript">
       atOptions = {
@@ -187,7 +165,7 @@
 
     <img id="selectedImage" src="https://raw.githubusercontent.com/saurani/Vat-savitripuja1/main/ChatGPT%20Image%20May%2025%2C%202025%2C%2006_43_05%20AM.png" alt="लक्ष्मी माता" />
 
-    <!-- यह नाम से बना हुआ संदेश फोटो के नीचे आएगा -->
+    <!-- शुभकामना संदेश फोटो के नीचे -->
     <div id="senderMessage"></div>
 
     <input type="text" id="senderName" placeholder="अपना नाम लिखें" oninput="updatePreview()" />
@@ -210,7 +188,7 @@
     </div>
   </div>
 
-  <!-- 🔻 Bottom Ad (Fixed) -->
+  <!-- 🔻 Bottom Ad -->
   <div id="bottomAd" class="ad-banner">
     <script type="text/javascript">
       atOptions = {
@@ -258,7 +236,8 @@
       const encoded = encodeURIComponent(messageText);
 
       if (platform === 'whatsapp') {
-        window.open(`https://wa.me/?text=${encoded}`, '_blank');
+        // ✅ Universal WhatsApp URL — works for both apps
+        window.open(`https://api.whatsapp.com/send?text=${encoded}`, '_blank');
       } else if (platform === 'facebook') {
         window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}`, '_blank');
       }
