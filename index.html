@@ -172,11 +172,8 @@
     <div id="previewBlock"></div>
 
     <div class="social-buttons">
-      <button class="mini-btn" onclick="shareLink('whatsapp')">
+      <button class="mini-btn" onclick="shareToPersonalWhatsApp()">
         <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"> WhatsApp
-      </button>
-      <button class="mini-btn" onclick="shareLink('facebook')">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"> Facebook
       </button>
       <button class="mini-btn" onclick="copyGeneratedLinkDirect()">
         <img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png" alt="Copy"> कॉपी लिंक
@@ -227,20 +224,16 @@
       alert("लिंक कॉपी हो गया!");
     }
 
-    function shareLink(platform) {
+    function shareToPersonalWhatsApp() {
       const name = document.getElementById('senderName').value.trim();
       const link = generateLink();
       if (!link || !name) return;
 
-      const messageText = `${name} की ओर से वट सावित्री पूजा का एक खास संदेश 👉 ${link}`;
-      const encoded = encodeURIComponent(messageText);
+      const message = `${name} की ओर से वट सावित्री पूजा का एक खास संदेश 👉 ${link}`;
+      const encoded = encodeURIComponent(message);
 
-      if (platform === 'whatsapp') {
-        // ✅ Universal WhatsApp URL — works for both apps
-        window.open(`https://api.whatsapp.com/send?text=${encoded}`, '_blank');
-      } else if (platform === 'facebook') {
-        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}`, '_blank');
-      }
+      // ✅ Only personal WhatsApp via Android Intent
+      window.location.href = `intent://send?text=${encoded}#Intent;scheme=whatsapp;package=com.whatsapp;end`;
     }
 
     function updatePreview() {
